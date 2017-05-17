@@ -5,7 +5,7 @@ package se.kth.ict.nextgenpos.model;
 public class InvalidItemException extends Exception {
     
     public InvalidItemException (int itemId){
-        super("The entered item ID '" + itemId + "' is invalid."
-           +"\nTry entering a different, valid item ID");
+        super("--------The entered item ID '" + itemId + "' is invalid."
+           +"\nTry entering a different, valid item ID--------");
     } 
 }

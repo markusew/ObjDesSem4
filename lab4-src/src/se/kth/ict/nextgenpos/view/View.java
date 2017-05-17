@@ -35,8 +35,6 @@ public class View implements ObservedSale {
         cont.addObserver(this);
 
         enterItem(1);
-        enterItem(2);
-        enterItem(3);
         /*
         System.out.println(">>>>> NOTE!!\n" +
 			   "A null pointer exception will follow since there is no handling" + 
