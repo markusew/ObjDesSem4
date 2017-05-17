@@ -31,6 +31,7 @@ public class SalesLineItem {
     /**
      * Returns the spec information of specified SalesLineItem to a string so that it
      * can be used to print values using the observer
+     * 
      * @return The spec in String format of specified SalesLineItem
      */
     public String toString(){

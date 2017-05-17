@@ -1,6 +1,4 @@
 package se.kth.ict.nextgenpos.model;
-
-
 /**
  *Thrown when the Item ID does not exist in the database.
  */

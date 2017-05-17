@@ -73,15 +73,32 @@ public class Sale {
     int getPayedAmount() {
 	return payedAmount;
     }
+    /**
+     * Adds observer to this object. Observers will be triggered when item is
+     * added to sale
+     * 
+     * @param observer the ObservedSale that is being added
+     */
+    
     public void addObserver(ObservedSale observer){
         this.saleObservers.add(observer);
     }
+    /**
+     * Deletes observer to this object. And notifies that a observer has
+     * been deleted.
+     * 
+     * @param observer the ObservedSale that is being deleted
+     */
     public void deleteObserver(ObservedSale observer){
         
         int observerIndex = saleObservers.indexOf(observer);
         System.out.println("Observer " + (observerIndex+1) + " deleted");
         saleObservers.remove(observerIndex);
     }
+    /**
+     * This method is called when an item is added to the sale and creates a
+     * copy of lineItems list and passes it out to the observers.
+     */
     private void notifyObservers(){
         
         SalesLineItem[] saleItemsList = lineItems.toArray(new SalesLineItem[this.lineItems.size()]);
