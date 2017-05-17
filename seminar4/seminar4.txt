@@ -1,0 +1,9 @@
+2017-maj-17 21:46:39, Exception was thrown: The entered item ID '10' is invalid.
+Try entering a different, valid item ID
+se.kth.ict.nextgenpos.model.InvalidItemException: The entered item ID '10' is invalid.
+Try entering a different, valid item ID
+	at se.kth.ict.nextgenpos.model.ProductCatalog.findSpecification(ProductCatalog.java:38)
+	at se.kth.ict.nextgenpos.controller.Controller.enterItem(Controller.java:50)
+	at se.kth.ict.nextgenpos.view.View.enterItem(View.java:56)
+	at se.kth.ict.nextgenpos.view.View.test(View.java:44)
+	at se.kth.ict.nextgenpos.startup.Main.main(Main.java:13)

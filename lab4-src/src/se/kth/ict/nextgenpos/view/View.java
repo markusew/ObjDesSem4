@@ -1,7 +1,9 @@
 package se.kth.ict.nextgenpos.view;
 
+import java.io.IOException;
 import se.kth.ict.nextgenpos.controller.Controller;
 import se.kth.ict.nextgenpos.model.InvalidItemException;
+import se.kth.ict.nextgenpos.model.LogHandler;
 import se.kth.ict.nextgenpos.model.ObservedSale;
 import se.kth.ict.nextgenpos.model.SalesLineItem;
 
@@ -11,14 +13,15 @@ import se.kth.ict.nextgenpos.model.SalesLineItem;
  */
 public class View implements ObservedSale{
     private Controller cont;
-    //private LogHandler logger;----
+    private LogHandler logger;
 
     /**
      * Creates a new <code>View</code>.
      * @param cont           The controller of the application.
      */
-    public View(Controller cont) {
+    public View(Controller cont) throws IOException {
 	this.cont = cont;
+        this.logger = new LogHandler();
     }
 
     /**
@@ -42,7 +45,7 @@ public class View implements ObservedSale{
         }
         catch(InvalidItemException e){
             System.out.println(e.getMessage());
-            //logger.logException(e);----
+            logger.logException(e);
         }
     }
 
@@ -58,13 +61,22 @@ public class View implements ObservedSale{
     }
 
     @Override
+    /**
+     * When an item is added this method calls the currentList method
+     */
     public void itemAdded(SalesLineItem[] listOfItems) {
         this.currentList(listOfItems);
     }
+    /**
+     * Prints out the current list as Strings.  
+     * 
+     * @param lineItems is the List of items that have been scanned. 
+     */
     public void currentList(SalesLineItem[] lineItems){
         System.out.println("List has been updated.");
         for (SalesLineItem lineItem : lineItems){
-            System.out.println(lineItem);
+            System.out.println(lineItem + "\n");
+        
         }
             
     }

@@ -15,14 +15,10 @@ public class LogHandler {
     private PrintWriter logFile;
     
     public LogHandler() throws IOException {
-        /*logFile = new PrintWriter(
+        this.logFile = new PrintWriter(
                 new FileWriter(LOG_FILE_NAME), true);
-         */
-        File file = new File("D:/Skrivbord/sem4file.txt");
-        file.getParentFile().mkdirs();
-
-        logFile = new PrintWriter(file);
     }
+    
 
     /**
      * Writes log entries.
