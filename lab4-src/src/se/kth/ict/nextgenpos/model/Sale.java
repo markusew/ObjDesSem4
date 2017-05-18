@@ -12,6 +12,7 @@ public class Sale {
     private int currentTotal;
     private int payedAmount;
     private int iterator;
+    private SalesLineItem lineItem;
 
     /**
      * Instantiates a new <code>Sale</code>.
@@ -19,6 +20,8 @@ public class Sale {
     public Sale() {
         saleObservers = new ArrayList<ObservedSale>();
 	lineItems = new ArrayList<SalesLineItem>();
+        
+        
     }
 
     /**
@@ -28,7 +31,7 @@ public class Sale {
      * @param quantity        The number of items.
      */
     public void addItem(ProductSpecification spec, int quantity) {
-	SalesLineItem lineItem = new SalesLineItem(spec, quantity);
+	lineItem = new SalesLineItem(spec, quantity);
 	lineItems.add(lineItem);
 	addToTotal(lineItem);
         notifyObservers();
@@ -92,7 +95,7 @@ public class Sale {
     public void deleteObserver(ObservedSale observer){
         
         int observerIndex = saleObservers.indexOf(observer);
-        System.out.println("Observer " + (observerIndex+1) + " deleted");
+        System.out.println("Observer " + (observerIndex + 1) + " deleted");
         saleObservers.remove(observerIndex);
     }
     /**
@@ -100,10 +103,10 @@ public class Sale {
      * copy of lineItems list and passes it out to the observers.
      */
     private void notifyObservers(){
-        
-        SalesLineItem[] saleItemsList = lineItems.toArray(new SalesLineItem[this.lineItems.size()]);
+ 
         for (ObservedSale obs : this.saleObservers){
-            obs.itemAdded(saleItemsList);
+            obs.itemAdded(lineItem.toString());
+           
         }
     }
 }

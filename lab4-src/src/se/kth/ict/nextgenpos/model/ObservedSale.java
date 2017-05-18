@@ -7,7 +7,7 @@ public interface ObservedSale {
     /**
      * Called when an item is added to the sale
      * 
-     * @param listOfItems The list of all items of the sale
+     * @param addedItem The item that was recently added.
      */
-    public void itemAdded(SalesLineItem[] listOfItems);
+    public void itemAdded(String addedItem);
 }
