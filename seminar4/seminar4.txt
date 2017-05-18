@@ -1,4 +1,4 @@
-2017-maj-18 11:07:25, Exception was thrown: --------The entered item ID '10' is invalid.-----------
+2017-maj-18 11:16:30, Exception was thrown: --------The entered item ID '10' is invalid.-----------
 --------Try entering a different, valid item ID--------
 se.kth.ict.nextgenpos.model.InvalidItemException: --------The entered item ID '10' is invalid.-----------
 --------Try entering a different, valid item ID--------

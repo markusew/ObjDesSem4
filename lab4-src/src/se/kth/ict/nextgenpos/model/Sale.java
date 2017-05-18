@@ -99,8 +99,8 @@ public class Sale {
         saleObservers.remove(observerIndex);
     }
     /**
-     * This method is called when an item is added to the sale and creates a
-     * copy of lineItems list and passes it out to the observers.
+     * This method is called when an item is added to the sale and sends the
+     * item that was added as a streing to the observer.
      */
     private void notifyObservers(){
  
